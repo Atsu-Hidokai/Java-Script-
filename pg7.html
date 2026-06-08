@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>If a five- digit number is input through the keyboard,write a program to calculate the sum of its digits. </p>
+        <input type="number" id="sum" placeholder="Enter 5 Digit">
+        <button onclick="sum ()">Sum</button>
+        <p id="output"></p>
+
+        <script>
+            function sum() {
+                num = Number(document.getElementById("sum").value); //12345
+                n5 = num % 10;
+                num = Math.floor(num / 10);
+                n4 = num % 10;
+                num = Math.floor(num / 10);
+                n3 = num % 10;
+                num = Math.floor(num / 10);
+                n2 = num % 10;
+                num = Math.floor(num / 10);
+                n1 = num % 10;
+
+                sum_of_dig = n1 + n2 + n3 + n4 + n5;
+
+                document.getElementById("output").innerHTML = `
+                The sum of the five digits = ${sum_of_dig}
+                `;
+            }
+        </script>
+    </body>
+</html>
