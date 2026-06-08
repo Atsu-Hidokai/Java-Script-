@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <body>
+    <style>
+      table,
+      tr,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding:3px;
+      }
+    </style>
+    <p>
+      In a town,the percentage of men is 52,the percentage of total literacy is
+      48, If total percentage of literate men is 35 of the total population,
+      write a program total find the total number of illiterate men and women on
+      the city and the total city population is 80,000
+    </p>
+    <button onclick="lit()">Calculate illiterate</button>
+    <p id="output"></p>
+
+    <script>
+      function lit() {
+        //the given details
+        percent_men_p = 52;
+        tot_literate_p = 48;
+        literate_men_p = 35;
+        tot_pop = 80000;
+
+        tot_men = (percent_men_p / 100) * tot_pop;
+        tot_literacy = (tot_literate_p / 100) * tot_pop;
+        lit_men = (literate_men_p / 100) * tot_pop;
+
+        //literated women
+        lit_women = tot_literacy - lit_men;
+        tot_women = tot_pop - tot_men;
+
+        //illiterated men and women
+        ill_men = tot_men - lit_men;
+        ill_women = tot_women - lit_women;
+
+        document.getElementById("output").innerHTML = `
+             <table>
+                <tr>
+                    <th>Total Population</th>
+                    <td>${tot_pop}</td>    
+                    </tr>
+                    <tr>
+                    <th>Total Men Population</th>
+                    <td>${tot_men}</td>    
+                    </tr>
+                    <tr>
+                    <th>Total Women Population</th>
+                    <td>${tot_women}</td>    
+                    </tr>
+                    <tr>
+                    <th>Total Literacy</th>
+                    <td>${tot_literacy}</td>    
+                    </tr>
+                    <tr>
+                    <th>Total Men Literacy</th>
+                    <td>${lit_men}</td>    
+                    </tr>
+                    <tr>
+                    <th>Total Women Literacy</th>
+                    <td>${lit_women}</td>    
+                    </tr>
+                    <tr>
+                    <th>Total illiterated Men</th>
+                    <td>${ill_men}</td>    
+                    </tr>
+                    <tr>
+                    <th>Total illiterated Women</th>
+                    <td>${ill_women}</td>    
+                    </tr>
+                </table>
+             `;
+      }
+    </script>
+  </body>
+</html>
