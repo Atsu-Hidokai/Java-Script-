@@ -1,0 +1,66 @@
+<!DOCTYPE <html>
+<html>
+  <body>
+    <style>
+        table,tr,td {
+            border-collapse: collapse;
+            border: 2px solid black;
+            padding : 3px;
+        }
+        table {
+            margin-top: 10px;
+        }
+       
+    </style>
+    <p>
+      Get three subject marks input through the keyboard and find total and the
+      average percentage, and give grades according the average percent of the
+      student.
+    </p>
+    <input type="number" id="m1" placeholder="enter mark one">
+    <input type="number" id="m2" placeholder="enter mark two">
+    <input type="number" id="m3" placeholder="enter mark three">
+
+    <button id="btn" onclick="stud_res()">GET RESULT</button>
+    <div id="output"></div>
+
+    <script>
+        function stud_res() {
+            m1 = Number(document.getElementById("m1").value);
+            m2 = Number(document.getElementById("m2").value);
+            m3 = Number(document.getElementById("m3").value);
+
+            tot = m1 + m2 + m3;
+            avg = tot / 3;
+
+            document.getElementById("output").innerHTML = `
+            <table>
+                <tr>
+                    <td>Mark one</td>
+                    <td>${m1}</td>
+                    </tr>
+                    <tr>
+                    <td>Mark Two</td>
+                    <td>${m2}</td>
+                    </tr>
+                    <tr>
+                    <td>Mark Three</td>
+                    <td>${m3}</td>
+                    </tr>
+                    <tr>
+                    <td>Total</td>
+                    <td>${tot}</td>
+                    </tr>
+                    <tr>
+                    <td>Average</td>
+                    <td>${avg.toFixed(2)}</td>
+                    </tr>
+            </table>
+            `;
+
+
+        }
+
+    </script>
+  </body>
+</html>
