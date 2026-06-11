@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <body>
+    <p>
+      The current year and the year in which the employee joined the
+      organization are entitled through the keyboard. If the number of years for
+      which the employee has served the organization is greater than 3 then a
+      bonus of Rs.2500/- is given to the employee.If the years of service are
+      not greater than 3 then the program should do nothing.
+    </p>
+    <input
+      type="number"
+      id="current_year"
+      placeholder="Enter the Current year"
+    />
+    <br />
+    <br />
+    <input
+      type="number"
+      id="joined_year"
+      placeholder="Enter the Emp Joined year"
+    />
+    <br />
+    <br />
+    <hr />
+
+    <button onclick="bonus()">Find Bonus</button>
+    <div id="output"></div>
+
+    <script>
+      function bonus() {
+        const current_year = document.getElementById("current_year");
+        const joined_year = document.getElementById("joined_year");
+
+        if (current_year.value == "" || joined_year.value == "") {
+          alert("Please Enter Valid Data's");
+          return;
+        }
+
+        const current_1 = Number(current_year.value);
+        const joined_1 = Number(joined_year.value);
+
+        if (current_1 <= 0) {
+          current_year.focus();
+          alert("Please enter proper year");
+          return;
+        }
+        if (joined_1 <= 0) {
+          joined_year.focus();
+          alert("Please enter proper year");
+          return;
+        }
+        if (joined_1 > current_1) {
+          alert("Joined year cannot be greater than current year");
+          joined_year.focus();
+          return;
+        }
+
+        let serviceYears = current_1 - joined_1;
+        let bonus = 0;
+
+        if (serviceYears > 3) {
+          bonus = 2500;
+          document.getElementById("output").innerHTML =
+            `The employee will get bonus of ${bonus}`;
+        } else {
+          document.getElementById("output").innerHTML =
+            `The employee will get bonus of ${bonus}`;
+        }
+      }
+    </script>
+  </body>
+</html>
