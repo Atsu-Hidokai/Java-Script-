@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>
+      While purchasing certain items, a discount of 10% is offered if the
+      quantity purchased is more than 1000, if quantity and price per item are
+      input through the keyboard, write a program to calculate the total
+      expenses.
+    </p>
+
+    <input
+      type="number"
+      id="pricePer1"
+      placeholder="Enter the price of 1 item"
+    />
+    <br />
+    <br />
+    <input type="number" id="quantity" placeholder="Enter the quantity" />
+    <br />
+    <br />
+    <hr />
+    <button onclick="totExpnz()">Calculate Expense</button>
+    <div id="output"></div>
+
+    <script>
+      function totExpnz() {
+        const pricePeritem = document.getElementById("pricePer1");
+        const itemQuantity = document.getElementById("quantity");
+
+        if (pricePeritem.value == "" || itemQuantity.value == "") {
+          //validation part whether the data's are filled or empty.
+          alert("Please fill the values");
+          return;
+        }
+
+        const price = Number(pricePeritem.value);
+        const quantity = Number(itemQuantity.value);
+
+        if (price <= 0) {
+          alert("The price cannot be zero or less than that");
+          pricePeritem.focus();
+          return;
+        }
+        if (quantity <= 0) {
+          alert("The quantity cannot be zero or less than that");
+          itemQuantity.focus();
+          return;
+        }
+
+        let discount = 0;
+        let totalExpense = 0;
+
+        if (quantity >= 1000) {
+           discount = (quantity * price) * 0.10 ;
+           totalExpense = (quantity * price) - discount;
+        } else {
+          totalExpense = quantity * price;
+        }
+
+        document.getElementById("output").innerHTML = `
+        The total expense is ${totalExpense}
+        `;
+      }
+    </script>
+  </body>
+</html>
