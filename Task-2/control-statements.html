@@ -1,0 +1,123 @@
+<!DOCTYPE <html>
+<html>
+  <body>
+    <style>
+      table,
+      tr,
+      td {
+        border-collapse: collapse;
+        border: 2px solid black;
+        padding: 3px;
+      }
+      table {
+        margin-top: 10px;
+      }
+    </style>
+    <p>
+      Get three subject marks input through the keyboard and find total and the
+      average percentage, and give grades according the average percent of the
+      student.
+    </p>
+    <input type="number" id="m1" placeholder="enter mark one" />
+    <input type="number" id="m2" placeholder="enter mark two" />
+    <input type="number" id="m3" placeholder="enter mark three" />
+
+    <button id="btn" onclick="stud_res()">GET RESULT</button>
+    <div id="output"></div>
+
+    <script>
+      function stud_res() {
+        const m1Element = document.getElementById("m1");
+        const m2Element = document.getElementById("m2");
+        const m3Element = document.getElementById("m3");
+
+        if (
+          m1Element.value == "" ||
+          m2Element.value == "" ||
+          m3Element.value == ""
+        ) {
+          alert("Please enter all the marks");
+          return;
+        }
+
+        const m1 = Number(m1Element.value);
+        const m2 = Number(m2Element.value);
+        const m3 = Number(m3Element.value);
+
+        if(m1 > 100 || m1 < 0){
+            alert("Please enter proper mark");
+            m1Element.focus();
+            return;
+        }
+         if(m2 > 100 || m2 < 0){
+            alert("Please enter proper mark");
+            m2Element.focus();
+            return;
+        }
+         if(m3 > 100 || m3 < 0){
+            alert("Please enter proper mark");
+            m3Element.focus();
+            return;
+        }
+
+        const tot = m1 + m2 + m3;
+        const avg = tot / 3;
+
+        let result = "";
+        let grade = "";
+
+        if (m1 >= 35 && m2 >= 35 && m3 >= 35) {
+          result = "Pass";
+          if (avg >= 90 && avg <= 100){
+            grade = "A Grade";
+          }
+          else if(avg >= 80 && avg <= 89){
+            grade = "B Grade";
+          }
+          else if(avg >= 70 && avg <= 79){
+            grade = "C Grade";
+          }
+          else {
+            grade = "D Grade";
+          }
+        } else {
+          result = "Fail";
+          grade = "No Grade";
+        }
+
+        document.getElementById("output").innerHTML = `
+            <table>
+                <tr>
+                    <td>Mark one</td>
+                    <td>${m1}</td>
+                    </tr>
+                    <tr>
+                    <td>Mark Two</td>
+                    <td>${m2}</td>
+                    </tr>
+                    <tr>
+                    <td>Mark Three</td>
+                    <td>${m3}</td>
+                    </tr>
+                    <tr>
+                    <td>Total</td>
+                    <td>${tot}</td>
+                    </tr>
+                    <tr>
+                    <td>Average</td>
+                    <td>${avg.toFixed(2)}</td>
+                    </tr>
+                     <tr>
+                    <td>Result</td>
+                    <td>${result}</td>
+                    </tr>
+                     <tr>
+                    <td>Grade</td>
+                    <td>${grade}</td>
+                    </tr>
+            </table>
+            `;
+      }
+    </script>
+  </body>
+</html>
