@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <body>
+    <p>
+      If his basic salary is less than Rs.1500, then HRA = 10% of basic salary
+      and DA = 90% of basic salary.If his salary is either equal to or above
+      Rs.1500,then HRA = Rs.500 and DA = 98% of basic salary.If the employee's
+      salary is input through the keyboard write a program to find his gross
+      salary.
+    </p>
+    <input type="number" id="salary" placeholder="Enter the salary amount" />
+    <button onclick="gross()">Find Gross-Salary</button>
+    <div id="output"></div>
+
+    <script>
+      function gross() {
+        empSalary = Number(document.getElementById("salary").value);
+        let HRA = 0;
+        let DA = 0;
+
+        if (empSalary <= 1500) {
+          HRA = empSalary * 0.1;
+          DA = empSalary * 0.9;
+          grossAmt = empSalary + HRA + DA;
+        } else {
+          HRA = 500;
+          DA = empSalary * 0.98;
+          grossAmt = empSalary + HRA + DA;
+        } 
+
+        document.getElementById("output").innerHTML = `
+        <table>
+          <tr>
+            <td>Employee Salary</td>
+            <td>${empSalary}</td>
+            </tr>
+            <tr>
+            <td>HRA</td>
+            <td>${HRA}</td>
+            </tr>
+            <tr>
+            <td>DA</td>
+            <td>${DA}</td>
+            </tr>
+            <tr>
+            <td>Gross Salary</td>
+            <td>${grossAmt}</td>
+            </tr>
+          </table>
+        `;
+      }
+    </script>
+  </body>
+</html>
