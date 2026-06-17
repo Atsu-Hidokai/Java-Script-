@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>Any integer is input through the keyboard.
+        Write a program to find out whether it is a odd or even number</p>
+
+    <input type="number" id="num" placeholder="Enter any number">
+    <button onclick="oddOreven()">Verify</button>
+    <div id="output"></div>
+
+    <script>
+        function oddOreven() {
+            const num = Number(document.getElementById("num").value);
+            const output = document.getElementById("output");
+
+            if(num == 0){
+                alert("Number can not be empty please enter any value");
+                return;
+            }
+
+            let verify = "";
+            if (num % 2 == 0) {
+                verify = "Even_Number";
+            } else {
+                verify = "Odd_Number";
+            }
+             
+            output.innerHTML = `The expected number is ${verify}`;
+        }
+    </script>
+</body>
+
+</html>
