@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        table {
+            margin-top: 15px;
+        }
+
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+    <p>Write a program to calculate the salary as per the following table.</p>
+    <table>
+        <tr>
+            <th>Gender</th>
+            <th>Years of Service</th>
+            <th>Qualification</th>
+            <th>Salary</th>
+        </tr>
+        <tr>
+            <td rowspan="4">Male</td>
+            <td>&gt;=10</td>
+            <td>Post Graduate</td>
+            <td>15000</td>
+        </tr>
+        <tr>
+            <td>&gt;=10</td>
+            <td>Grduate</td>
+            <td>10000</td>
+        </tr>
+        <tr>
+            <td>&lt;10</td>
+            <td>Post Grduate</td>
+            <td>10000</td>
+        </tr>
+        <tr>
+            <td>&lt;10</td>
+            <td>Grduate</td>
+            <td>7000</td>
+        </tr>
+        <tr>
+            <td rowspan="4">Female</td>
+            <td>&gt;=10</td>
+            <td>Post Grduate</td>
+            <td>12000</td>
+        </tr>
+        <tr>
+            <td>&gt;=10</td>
+            <td>Grduate</td>
+            <td>9000</td>
+        </tr>
+        <tr>
+            <td>&lt;10</td>
+            <td>Post Grduate</td>
+            <td>10000</td>
+        </tr>
+        <tr>
+            <td>&lt;10</td>
+            <td>Grduate</td>
+            <td>6000</td>
+        </tr>
+    </table> <br> <br>
+    <label>Choose the Gender</label>
+    <select id="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select><br><br>
+        
+
+    <label> Choose the Years of Service</label>
+    <select id="yos">
+        <option value="&gt;=10"> &gt;=10 Years</option>
+        <option value="&lt;10"> &lt;10 Years</option>
+    </select> <br><br>
+    <label>Qualification</label>
+    <select id="qualify">
+        <option>Under Graduate</option>
+        <option>Post Graduate</option>
+    </select>
+    <button onclick="empSalary()">Calculate Salary</button>
+    <div id="output"></div>
+
+    <script>
+        function empSalary() {
+            const gender = document.getElementById("gender").value;
+            const yearsOfservice = document.getElementById("yos").value;
+            const qualification = document.getElementById("qualify").value;
+            const output = document.getElementById("output");
+
+            let salary = 0;
+            if (gender == "Male" && yearsOfservice == ">=10" && qualification == "Post Graduate") {
+                salary = 15000;
+            } else if (gender == "Male" && yearsOfservice == ">=10" && qualification == "Under Graduate") {
+                salary = 10000;
+            } else if (gender == "Male" && yearsOfservice == "<10" && qualification == "Post Graduate") {
+                salary = 10000;
+            } else if (gender == "Male" && yearsOfservice == "<10" && qualification == "Under Graduate") {
+                salary = 7000;
+            } else if (gender == "Female" && yearsOfservice == ">=10" && qualification == "Post Graduate") {
+                salary = 12000;
+            } else if (gender == "Female" && yearsOfservice == ">=10" && qualification == "Under Graduate") {
+                salary = 9000;
+            } else if (gender == "Female" && yearsOfservice == "<10" && qualification == "Post Graduate") {
+                salary = 10000;
+            } else if (gender == "Female" && yearsOfservice == "<10" && qualification == "Under Graduate") {
+                salary = 6000;
+            }
+            output.innerHTML = `The expected salary is ${salary}`;
+        }
+    </script>
+</body>
+</html>
