@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>A company insures its drivers in the following cases:
+    <ol type="a">
+        <li>If a driver is married.</li>
+        <li>If the driver is unmarried, male & above 30 years of age.</li>
+        <li>If the driver is unmarried, female & above 25 years.</li>
+    </ol>
+    </p>
+    <label>Choose the Gender</label>
+    <select id="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select><br><br>
+    <input type="number" id="age" placeholder="Enter the Age"><br><br>
+    <label>Enter your Marital Status</label>
+    <select id="mrgStatus">
+        <option value="Married">Married</option>
+        <option value="Un_Married">Un_Married</option>
+    </select><br><br>
+
+    <button onclick="insure()">Find Insurance</button>
+    <div id="output"></div>
+
+    <script>
+        function insure() {
+            const driverGen = document.getElementById("gender").value;
+            const mrgState = document.getElementById("mrgStatus").value;
+            const driverAge = Number(document.getElementById("age").value);
+            const output = document.getElementById("output")
+ 
+            if(driverAge == ""){
+                alert("Age Cannot be Empty Value");
+                driverAge.focus();
+                return;
+            }
+
+            let eligibility = "";
+            if (mrgState == "Married") {
+                eligibility = "Eligible";
+            }
+            else if (driverGen == "Male" && mrgState == "Un_Married" && driverAge > 30) {
+                eligibility = "Eligible";
+            }
+            else if (driverGen == "Female" && mrgState == "Un_Married" && driverAge > 25) {
+                eligibility = "Eligible";
+            } else {
+                eligibility = "Not Eligible";
+            }
+            output.innerHTML = `
+            Eligibility of getting insurance by the driver is ${eligibility}
+            `;
+        }
+    </script>
+</body>
+</html>
