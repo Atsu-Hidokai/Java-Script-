@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        input,button{
+            margin-top: 5px;
+            display: block;
+            
+        }
+    </style>
+    <p>A five-digit number is entered through the keyboard, write a program to obtain the
+        reversed number and to determine whether the original and reversed numbers are equal.
+    </p>
+
+    <input type="number" id="n1" placeholder="Enter number one">
+    <input type="number" id="n2" placeholder="Enter number two">
+    <input type="number" id="n3" placeholder="Enter number three">
+    <input type="number" id="n4" placeholder="Enter number four">
+    <input type="number" id="n5" placeholder="Enter number five">
+
+    <button onclick="compare()">Compare</button>
+    <div id="output"></div>
+
+    <script>
+        function compare() {
+            const input1 = document.getElementById("n1");
+            const input2 = document.getElementById("n2");
+            const input3 = document.getElementById("n3");
+            const input4 = document.getElementById("n4");
+            const input5 = document.getElementById("n5");
+
+            const num1 = Number(input1.value);
+            const num2 = Number(input2.value);
+            const num3 = Number(input3.value);
+            const num4 = Number(input4.value);
+            const num5 = Number(input5.value);
+
+            const output = document.getElementById("output");
+
+            const digits =  (num1 * 10000) + (num2 * 1000) + (num3 * 100) + (num4 * 10) + (num5 * 1);
+            const reversed = (num5 * 10000) + (num4 * 1000) + (num3 * 100) + (num2 * 10) + (num1 * 1);
+
+            let strDigit = digits.toString();
+            let strReversed = reversed.toString();
+            let compare_digits = "Not Equal";
+
+            if(strDigit === strReversed){
+                compare_digits = "Numbers are Equal"
+            }else {
+                
+            }
+        }
+    </script>
+</body>
+
+</html>
