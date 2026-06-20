@@ -1,3 +1,35 @@
-<p>Any year is entered through the keyboard, write a program to determine whether the year is leap
-    year or not. Use the logical operator && and the ||.
-</p>
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        input,
+        button,
+        div {
+            display: block;
+            margin-top: 15px;
+        }
+    </style>
+
+    <p>Any year is entered through the keyboard, write a program to determine whether the year is leap
+        year or not. Use the logical operator && and the ||.
+    </p>
+
+    <input type="numebr" id="num" placeholder="Enter the Number">
+    <button onclick="leap()">Find Leap</button>
+    <div id="output"></div>
+
+    <script>
+        function leap() {
+            const year = Number(document.getElementById("num").value);
+            const output = document.getElementById("output");
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                output.innerHTML = `The year is leap year`;
+            } else {
+                output.innerHTML = `The year is not a leap year`;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,4 +1,49 @@
-<p>Given the length and breadth of a rectangle, write a program to find whether the area of 
-    the rectangle is greater than its perimeter. For example, the area of the rectangle with 
-    length 5 and breadth of 4 - is greater than its perimeter.
-</p>
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        input,
+        button,
+        div {
+            display: block;
+            margin-top: 15px;
+        }
+    </style>
+
+    <p>Given the length and breadth of a rectangle, write a program to find whether the area of
+        the rectangle is greater than its perimeter. For example, the area of the rectangle with
+        length 5 and breadth of 4 - is greater than its perimeter.
+    </p>
+    <h3>Rectangle Area</h3>
+    <hr>
+    <input type="number" id="length" placeholder="Enter length">
+    <input type="number" id="width" placeholder="Enter width">
+    <button onclick="compare()">Compare</button>
+    <div id="output"></div>
+
+
+    <script>
+
+        function compare() {
+            const length = Number(document.getElementById("length").value);
+            const width = Number(document.getElementById("width").value);
+            const output = document.getElementById("output");
+
+            const area = (length * width);
+            const peri = 2 * (length + width);
+
+            if (area > peri) {
+                output.innerHTML = `The area = ${area} is greater than its perimeter = ${peri} `;
+            } else {
+                output.innerHTML = `The perimeter = ${peri} is greater than its area = ${area}`;
+            }
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

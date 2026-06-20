@@ -1,1 +1,36 @@
-<p>Find the absolute value of a number entered through the keyboard.</p>
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        input,
+        button,
+        div {
+            display: block;
+            margin-top: 15px;
+        }
+    </style>
+
+    <p>Find the absolute value of a number entered through the keyboard.</p>
+
+    <input type="number" id="num" placeholder="Enter the number">
+    <button onclick="calc()">Find Absolute</button>
+    <div id="output"></div>
+
+    <script>
+        function calc() {
+            const num1 = Number(document.getElementById("num").value);
+            const output = document.getElementById("output");
+
+            if (num1 < 0) {
+                output.innerHTML = `The absolute value of the number is ${num1 * (-1)}`;
+            } else {
+                output.innerHTML = `The absolute value of the number is ${num1}`;
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,8 +1,42 @@
 <!DOCTYPE html>
 <html>
     <body>
+        <style>
+            input,button,div{
+                display: block;
+                margin-top: 15px;
+            }
+
+        </style>
         <p>If the ages of Ram and Sathyan and Ajay are input through the keyboard, Write a program to 
             determine the youngest of the three.
         </p>
+        <input type="number" id="ram" placeholder="Enter Ram Age">
+        <input type="number" id="sathyan" placeholder="Enter Sathyan Age">
+        <input type="number" id="ajay" placeholder="Enter Ajay Age">
+
+        <button onclick="findYoung()">Find Youn Person</button>
+        <div id="output"></div>
+
+       <script>
+        function findYoung(){
+            const output = document.getElementById("output");
+            const ramAge = Number(document.getElementById("ram").value);
+            const sathyanAge = Number(document.getElementById("sathyan").value);
+            const ajayAge = Number(document.getElementById("ajay").value);
+
+            if(ramAge < sathyanAge && ramAge < ajayAge ){
+                output.innerHTML = `Ram is Youngest`;
+            }else if(sathyanAge < ramAge && sathyanAge < ajayAge){
+                output.innerHTML = `Sathyan is Youngest`;
+            }else if(ajayAge < ramAge && ajayAge < sathyanAge){
+                output.innerHTML = `Ajay is Youngest`;
+            }else if(ramAge == sathyanAge && sathyanAge == ajayAge ){
+                output.innerHTML = `Among the persons age are same`;
+            }
+
+        }
+       </script>
+
     </body>
 </html>

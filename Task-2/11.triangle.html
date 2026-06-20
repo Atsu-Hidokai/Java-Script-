@@ -1,4 +1,46 @@
-<p>Write a program to check whether a triangle is valid or not, when the three angles of the 
-    triangle are entered through the keyboard. A triangle is valid if the sum of all the three
-    angles is equal to 180 degrees.
-</p>
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        input,
+        button,
+        div {
+            display: block;
+            margin-top: 15px;
+        }
+    </style>
+
+    <p>Write a program to check whether a triangle is valid or not, when the three angles of the
+        triangle are entered through the keyboard. A triangle is valid if the sum of all the three
+        angles is equal to 180 degrees.
+    </p>
+
+    <input type="numebr" id="angle1" placeholder="Enter angle">
+    <input type="numebr" id="angle2" placeholder="Enter angle">
+    <input type="numebr" id="angle3" placeholder="Enter angle">
+
+    <button onclick="triangle()">Validate</button>
+    <div id="output"></div>
+
+    <script>
+        function triangle() {
+            const output = document.getElementById("output");
+            const ang1 = Number(document.getElementById("angle1").value);
+            const ang2 = Number(document.getElementById("angle2").value);
+            const ang3 = Number(document.getElementById("angle3").value);
+
+            //we can validate the angles like if(angle >= 70){alert("The angles cannot be greater than 70")return}
+
+            let degree = (ang1 + ang2 + ang3);
+
+            if (degree == 180) {
+                output.innerHTML = `This is the valid triangle`;
+            } else {
+                output.innerHTML = `This is not valid triangle`;
+            }
+        }
+    </script>
+</body>
+
+</html>
