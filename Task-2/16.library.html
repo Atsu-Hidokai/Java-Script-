@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        input,
+        button,
+        div {
+            display: block;
+            margin-top: 15px;
+        }
+    </style>
+    <p>A library charges a fine for every book returned late. For first 5 days the fine is 50 paise, for
+        6-10 days fine is one rupee and above 10 days fine is 5 rupees. If you return the book after 30 days
+        your membership will be cancelled. Write a program to accept the number of days the member is late to return
+        the book and display the fine or the appropriate message.
+    </p>
+
+    <input type="number" id="days" placeholder="how late you came">
+    <button onclick="fine()">Check Fine</button>
+    <div id="output"></div>
+
+    <script>
+        function fine() {
+            const output = document.getElementById("output");
+            const days = Number(document.getElementById("days").value);
+
+            if (days <= 5) {
+                output.innerHTML = `The fine amount is 50 paise`;
+            } else if (days >= 6 && days <= 10) {
+                output.innerHTML = `The fine amount is 1 rupee`;
+            } else if (days > 10 && days <= 30) {
+                output.innerHTML = `The fine amount is 5 rupee`;
+            } else if (days > 30) {
+                output.innerHTML = `Your membership is cancelled`;
+            }
+        }
+    </script>
+</body>
+
+</html>

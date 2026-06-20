@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        input,
+        button,
+        div {
+            display: block;
+            margin-top: 15px;
+        }
+    </style>
+    <p>In a company, worker efficiency is determined on the basis of the time required for a worker to complete
+        a particular job. If the time taken by the worker is between 2-3 hours, then the worker is said to be highly
+        efficient.
+        If the time required by the worker is between 3-4 hours, then the worker is ordered to improve speed,If the time
+        taken is between 4-5 hours the worker is given training to improve his speed, and if the time taken by the
+        worker
+        is more than 5 hours, then the worker has to leave the company. If the time taken by the worker is input through
+        the keyboard, find the efficiency of the worker.
+    </p>
+    <input type="number" id="hours" placeholder="Enter hours of working">
+    <button onclick="workTime()">Check Efficiency</button>
+    <div id="output"></div>
+
+    <script>
+        function workTime() {
+            const output = document.getElementById("output");
+            const workHours = Number(document.getElementById("hours").value);
+
+            if (workHours >= 1 && workHours <= 3) {
+                output.innerHTML = `Work done by efficient worker`;
+            } else if (workHours > 3 && workHours <= 4) {
+                output.innerHTML = `Worker need to improve speed`;
+            } else if (workHours > 4 && workHours <= 5) {
+                output.innerHTML = `Worker need speed training`;
+            } else if (workHours > 5) {
+                output.innerHTML = `Fire Worker`;
+            }
+        };
+    </script>
+</body>
+
+</html>
