@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        input,
+        div,
+        button {
+            display: block;
+            margin-top: 15px;
+        }
+    </style>
+    <p>Write a program to find the given number is armstrong number or not.</p>
+
+    <input type="number" id="num" placeholder="Enter a number">
+    <button onclick="isArm()">Check Armstrong</button>
+    <div id="output"></div>
+
+    <script>
+        function isArm() {
+            let numStr = document.getElementById("num").value;
+            let count = numStr.length;
+            let number = Number(numStr);
+            let sum = 0;
+            let rem = 0;
+            const output = document.getElementById("output");
+            let temp = number;
+
+            while (temp > 0) {
+                rem = (temp % 10);
+                rem = Math.pow(rem, count);
+                sum += rem;
+                temp = Math.floor(temp / 10);
+            }
+
+            if (number === sum) {
+                output.innerHTML = `${number} is armstrong number`;
+            } else {
+                output.innerHTML = `${number} is not a armstrong number`;
+            }
+        };
+    </script>
+</body>
+
+</html>
