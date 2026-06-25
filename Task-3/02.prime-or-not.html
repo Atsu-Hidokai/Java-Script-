@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        input,
+        div,
+        button {
+            display: block;
+            margin-top: 15px;
+        }
+    </style>
+    <p>Write a program to find the given number is prime or not.</p>
+    <input type="number" id="num" placeholder="Enter a number">
+    <button onclick="findPrime()">Check Number</button>
+    <div id="output"></div>
+
+    <script>
+        function findPrime() {
+            const output = document.getElementById("output");
+            let numStr = document.getElementById("num");
+            let number = Number(numStr.value);
+            let isPrime = true;
+
+            if (number <= 1) {
+                output.innerHTML = ("The Given Number isn't Prime ");
+                return;
+            }
+
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                output.innerHTML = `The given number is prime ${number}`;
+            } else {
+                output.innerHTML = `The given number is not a prime ${number}`;
+            }
+        }
+    </script>
+</body>
+
+</html>
