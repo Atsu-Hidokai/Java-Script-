@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        input,
+        div,
+        button {
+            display: block;
+            margin-top: 15px;
+        }
+    </style>
+    <p>Write a program to find the armstrong number between the 1 to 10000</p>
+    <button onclick="isArm()">List Numbers</button>
+    <div id="output"></div>
+    <script>
+        function isArm() {
+            let result = ""; //empty string for adding the over all values of armstrong numbers
+
+            for (let i = 1; i <= 10000; i++) {      // to go through 1 to 10000 thousand numbers
+                let numStr = i.toString();            
+                let digits = numStr.length;
+                let number = i;
+                let sum = 0;
+
+                const output = document.getElementById("output");  // to print on the document
+
+
+                while (number > 0) {               // for seperating the digits and calculate 
+                    let rem = (number % 10);
+                    rem = Math.pow(rem, digits);
+                    sum += rem;
+                    number = Math.floor(number / 10);
+                    
+                }
+                if (sum == i) {   // validating the final values 
+                    result += `The armstrong numbers are ${sum} <br>`;
+                    output.innerHTML = result;
+                }
+            }
+
+
+        };
+
+    </script>
+</body>
+
+</html>

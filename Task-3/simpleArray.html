@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>Write a program to count and print the number of odd and even numbers, [2,85,6,77,5]</p>
+    <script>
+        let a = [2, 85, 6, 77, 5];
+        let odd = [];
+        let even = [];
+
+        for (let i = 0; i < a.length; i++) {
+            console.log(a[i]);
+            if (a[i] % 2 == 0) {
+                even.push(a[i]);
+            } else {
+                odd.push(a[i]);
+            }
+        }
+
+        console.log(`The even numbers are ${even} | ${even.length}`);
+        console.log(`The odd numbers are ${odd} | ${odd.length}`);
+    </script>
+
+</body>
+
+</html>
