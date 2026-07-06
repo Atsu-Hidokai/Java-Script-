@@ -1,0 +1,35 @@
+<!DOCTYPE <html>
+<html>
+
+<body>
+    <style>
+        input,
+        button,
+        div {
+            display: block;
+            margin-top: 15px;
+        }
+    </style>
+    <p>Write a program to find the reverse number of given "n" digits </p>
+    <input type="number" id="num" placeholder="Enter number to reverse">
+    <button onclick="rev()">Reverse</button>
+    <div id="output"></div>
+    <script>
+        function rev() {
+            let number = document.getElementById("num").value;
+            let result = 0;
+            let temp;
+            let copy = number;
+            const output = document.getElementById("output");
+
+            while (number > 0) {
+                temp = (number % 10);
+                result = result * 10 + temp;
+                number = Math.floor(number / 10);
+            }
+            output.innerHTML = `The reversed number is ${copy} to ${result}`;
+        }
+    </script>
+</body>
+
+</html>

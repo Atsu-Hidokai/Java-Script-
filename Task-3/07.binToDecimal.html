@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>Write a program to find binary number from the decimal number</p>
+    <style>
+        input,
+        div,
+        button {
+            display: block;
+            margin-top: 15px;
+
+        }
+    </style>
+    <input type="number" id="num" placeholder="Enter the decimal number">
+    <button onclick="binary()">Find Binary</button>
+    <div id="output"></div>
+    <script>
+        function binary() {
+            const output = document.getElementById("output");
+            let number = Number(document.getElementById("num").value);
+            let result = "";
+            let copy = number;
+            let rev = 0;
+            let temp;
+
+            while (number > 0) {
+                temp = (number % 2);
+                result = temp + result;
+                number = Math.floor(number / 2);
+            }
+            output.innerHTML = `The binary value of ${copy} number is ${result}`;
+
+        }
+    </script>
+</body>
+
+</html>

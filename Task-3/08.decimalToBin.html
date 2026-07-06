@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        input,
+        button,
+        div {
+            display: block;
+            margin-top: 15px;
+        }
+    </style>
+    <p>Write a program to find Decimal number from the given binary number</p>
+    <input type="number" id="num" placeholder="Enter binary number">
+    <button onclick="binToDecimal()">Find Decimal</button>
+    <div id="output"></div>
+    <script>
+        function binToDecimal() {
+            let number = Number(document.getElementById("num").value);
+            const output = document.getElementById("output");
+            let copy = number;
+            let power = 0;
+            let decimal = 0;
+
+            while (number > 0) {
+                rem = (number % 10);
+                rem = rem * Math.pow(2, power);
+                decimal += rem;
+                number = Math.floor(number / 10);
+                power++;
+            }
+            output.innerHTML = `The decimal number is ${copy} to ${decimal}`;
+        }
+    </script>
+</body>
+
+</html>
