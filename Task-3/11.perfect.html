@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        input,
+        div,
+        button {
+            display: block;
+            margin-top: 0.5rem;
+        }
+    </style>
+    <p>Write a program to check if the numbers are perfect numbers are not</p>
+    <input type="number" placeholder="Enter the number" id="num">
+    <button onclick="perfect()">Find Perfect</button>
+    <div id="output"></div>
+    <script>
+        function perfect() {
+            const output = document.getElementById("output");
+            let number = Number(document.getElementById("num").value);
+            let result = 0;
+            for (let i = 1; i < number; i++) {
+                if (number % i == 0) {
+                    result += i;
+                }
+            }
+            if (result == number) {
+                output.innerHTML = `This is a perfect number ${number}`;
+            } else {
+                output.innerHTML = `This is not a perfect number ${number}`;
+
+            }
+        }
+    </script>
+</body>
+
+</html>

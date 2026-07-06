@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        input,
+        div,
+        button {
+            display: block;
+            margin-top: 15px;
+        }
+    </style>
+    <p>Write a program to find the fibonacci series numbers</p>
+    <input type="number" id="limit" placeholder="Enter the limit">
+    <button onclick="fib()">Get Numbers</button>
+    <div id="output"></div>
+    <script>
+        function fib() {
+            const output = document.getElementById("output");
+            let limit = Number(document.getElementById("limit").value);
+            let a = -1;
+            let b = 1;
+            let c;
+            for (let i = 1; i <= limit; i++) {
+                c = a + b;
+                output.innerHTML += `${c}<br>`;
+                a = b;
+                b = c;
+            }
+        }
+    </script>
+</body>
+
+</html>
