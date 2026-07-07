@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        input,
+        button,
+        div {
+            display: block;
+            margin-top: 15px;
+        }
+    </style>
+    <p>Write a program to find the factorial of the given number</p>
+    <input type="number" id="num" placeholder="Enter the number">
+    <button onclick="fact()">Find factorial</button>
+    <div id="output"></div>
+    <script>
+        function fact() {
+            const output = document.getElementById("output");
+            let number = Number(document.getElementById("num").value);
+            let fact = 1;
+            for (let i = 1; i <= number; i++) {
+                fact = fact * i;
+            }
+            output.innerHTML = `The factorial of given number is ${fact}`;
+        }
+
+    </script>
+</body>
+
+</html>
