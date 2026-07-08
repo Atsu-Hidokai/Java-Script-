@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h3>Lucky Number Generator</h3>
+    <hr>
+    <style>
+        input,
+        button {
+            display: block;
+            margin-top: 0.5rem;
+        }
+    </style>
+
+    <input type="number" id="length" placeholder="Enter password length">
+    <button onclick="luckyNo()">Generate</button>
+    <input type="text" id="lucky">
+
+    <script>
+        function luckyNo() {
+            let txtbox = document.getElementById("lucky");
+            let length = document.getElementById("length").value;
+            const digits = "1234567890";
+            let yourLuckyNo = "";
+
+            if(length<=0){
+                alert("Length cannot be zero or less than zero");
+                return;
+            }
+
+            for (let i = 1; i <= length; i++) {
+                const randomIndexNo = Math.floor(Math.random() * digits.length);
+                yourLuckyNo += digits[randomIndexNo];
+            }
+            txtbox.value = yourLuckyNo;
+        }
+    </script>
+</body>
+
+</html>
