@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        input,
+        div,
+        button {
+            display: block;
+            margin-top: 0.5rem;
+        }
+    </style>
+    <p>Write a program to check if it is a strong number or not</p>
+    <input type="number" id="num" placeholder="Enter number to check">
+    <button onclick="strong()">Find Strong</button>
+    <div id="output"></div>
+    <script>
+        function strong() {
+            let number = Number(document.getElementById("num").value);
+            const output = document.getElementById("output");
+            let sum = 0;
+            let temp = number;
+
+            while (number > 0) {
+                let rem = (number % 10);
+                let factorial = 1;
+                for (let i = 1; i <= rem; i++) {
+                    factorial = factorial * i;
+                }
+                sum += factorial;
+                number = Math.floor(number / 10);
+
+
+            }
+            if (temp == sum) {
+                output.innerHTML = `This is strong number ${temp}`;
+            } else {
+                output.innerHTML = `This is not a strong number ${temp}`;
+            }
+
+        }
+    </script>
+</body>
+
+</html>
