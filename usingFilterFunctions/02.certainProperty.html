@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>Filtering an array of objects to only include those with a certain property value</p>
+    <script>
+        let users = [  //Array of objects 
+            { name: 'Alice', age: 25 },
+            { name: 'Bob', age: 30 },
+            { name: 'Charlie', age: 35 },
+        ];
+        let aboveThirty = users.filter((user) => user.age >= 30)
+        console.log(aboveThirty);
+
+    </script>
+</body>
+
+</html>

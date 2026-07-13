@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>Filtering an array of objects to only include those that are enabled </p>
+    <script>
+        let buttons = [
+            { name: 'Save', enabled: true },
+            { name: 'Delete', enabled: false },
+            { name: 'Cancel', enabled: true },
+            { name: 'Submit', enabled: false }
+        ];
+        let enabledTrue = buttons.filter(button => button.enabled === true);
+        console.log(enabledTrue);
+    </script>
+</body>
+
+</html>

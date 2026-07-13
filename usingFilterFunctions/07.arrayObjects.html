@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>Filtering an array of objects to only include those with a certain property value</p>
+    <script>
+        let products = [
+            { name: 'apple', price: 1.2 },
+            { name: 'orange', price: 2.5 },
+            { name: 'banana', price: 3.5 }
+        ];
+        let items = products.filter(product => product.price > 2);
+        console.log(items);
+    </script>
+</body>
+
+</html>

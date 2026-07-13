@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>Filtering an array of objects to only include those with a specific value</p>
+    <script>
+        let items = [
+            { name: "apple", category: "fruit" },
+            { name: "carrot", category: "vegetable" },
+            { name: "banana", category: "fruit" }
+        ];
+        let result = items.filter(item => item.category === "fruit");
+        console.log(result);
+    </script>
+
+</body>
+
+</html>

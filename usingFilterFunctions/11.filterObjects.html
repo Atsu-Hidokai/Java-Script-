@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>Filtering an array of objects based on multiple conditions: Category Fruit and Price > 100</p>
+    <script>
+        const products = [
+            { name: 'Apple', category: 'fruit', price: 100 },
+            { name: 'Carrot', category: 'vegetable', price: 50 },
+            { name: 'Orange', category: 'fruit', price: 120 },
+            { name: 'Broccoli', category: 'vegetable', price: 75 },
+            { name: 'Mango', category: 'fruit', price: 110 }
+        ];
+        const items = products.filter(product => product.category === "fruit");
+        console.log(items);
+        const price = items.filter(item => item.price > 100);
+        console.log(price); 
+    </script>
+</body>
+
+</html>
