@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p> Modifying an Array of Objects</p>
+    <script>
+        const users = [
+            { name: "Ram", age: 30 },
+            { name: "Sam", age: 25 },
+            { name: "Ravi", age: 35 }
+        ];
+        const updatedAge = users.map(user => user.name + "-" + (user.age + 1));
+        console.log(updatedAge);
+    </script>
+</body>
+
+</html>

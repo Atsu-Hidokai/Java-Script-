@@ -1,0 +1,19 @@
+<html>
+
+<body>
+    <p>Formatting a Date Array</p>
+    <script>
+        // expected output ["1/1/2022", "2/1/2022", "3/1/2022"]  
+        // you should use the .toLocalDateString() function on this type of Date formatting questions
+        const dates = [       
+            new Date("2022-01-01"),
+            new Date("2022-02-01"),
+            new Date("2022-03-01")
+        ];
+
+        const updatedDates = dates.map(updateDate => updateDate.toLocaleDateString());
+        console.log(updatedDates);
+    </script>
+</body>
+
+</html>

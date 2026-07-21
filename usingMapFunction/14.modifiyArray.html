@@ -1,0 +1,23 @@
+<html>
+
+<body>
+    <p>To modify on the given array with add age of one year for every person on the array</p>
+    <script>
+        const users = [
+            { name: "Ram", age: 30 },
+            { name: "Sam", age: 25 },
+            { name: "Ravi", age: 35 }
+        ];
+
+        const usersAge = users.map(user => {
+            return {
+                ...user,
+                age : user.age + 1
+            }
+
+        });
+        console.log(usersAge);
+    </script>
+</body>
+
+</html>

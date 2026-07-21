@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>Given an array of objects representing books, create a new array containing the book titles and authors in the
+        format "Title by Author"</p>
+    <script>
+        const books = [
+            {
+                title: 'The Great Gatsby',
+                author: 'F. Scott Fitzgerald'
+            },
+            {
+                title: 'To Kill a Mockingbird',
+                author: 'Harper Lee'
+            },
+            {
+                title: 'Pride and Prejudice',
+                author: 'Jane Austen'
+            }
+        ];
+        const updateBooks = books.map(book => `${book.title} by ${book.author}` );
+        console.log(updateBooks);
+    </script>
+</body>
+
+</html>

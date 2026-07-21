@@ -2,14 +2,18 @@
 <html>
 
 <body>
-    <p>.Given an array of numbers, write a function that returns a new array containing only the even numbers from the
+    <p>Given an array of numbers, write a function that returns a new array containing only the even numbers from the
         original array, squared.</p>
     <script>
-        const numbers = [1, 2, 3, 4, 5];
-        let evenNumbers = numbers.map((number)=>(number % 2 == 0))
+        const numbers = [1, 2, 3, 4, 5, 6];
+        const evenNumbers = numbers.filter(number => number % 2 === 0);
+        const squareValues = evenNumbers.map(evenNumber => evenNumber * evenNumber);
+        console.log(`The even values are`, evenNumbers);
+        console.log(`The square values of even numbers`, squareValues);
 
-            
-        
+
+
+
     </script>
 </body>
 

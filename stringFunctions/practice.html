@@ -1,0 +1,28 @@
+<html>
+
+<body>
+    <script>
+        let numbers = [12, 55, 7, 89, 34, 91, 23];
+        let largeNo = numbers[0];
+        let largeNo_2 = numbers[0];
+
+        for (let i = 1; i < numbers.length; i++) {
+
+            if (numbers[i] > largeNo) {
+                largeNo_2 = largeNo;
+                largeNo = numbers[i];
+            } else if (numbers[i] > largeNo_2) {
+                largeNo_2 = numbers[i];
+            }
+        }
+        console.log(largeNo, largeNo_2);
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
