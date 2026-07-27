@@ -1,0 +1,112 @@
+<html>
+
+<body>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 0.2rem solid black;
+            border-radius: 3rem;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+    <p>Find total, average, result and grade and for the students and print the student markstatement</p>
+    <div id="output"></div>
+
+    <script>
+        let students = [
+            { id: 1, name: "naveen", eng: 95, math: 77, science: 98 },
+            { id: 1, name: "karthi", eng: 75, math: 88, science: 78 },
+            { id: 1, name: "naga", eng: 95, math: 44, science: 98 },
+            { id: 1, name: "vasa", eng: 45, math: 31, science: 89 },
+        ];
+
+        function totalMarks(student) {
+            return (student.eng + student.math + student.science);
+        }
+
+        function findAverage(total) {
+            return ((total / 3).toFixed(2));
+        };
+
+        function findResult(student) {
+            return (student.eng >= 35 && student.math >= 35 && student.science >= 35 ? "Pass" : "Fail");
+        };
+
+        function findGrade(result, average) {
+            if (result === "Fail") {
+                return "No Grade";
+            } else if (average >= 90) {
+                return "A Grade";
+            } else if (average >= 80) {
+                return "B Grade";
+            } else if (average >= 70) {
+                return "C Grade";
+            } else {
+                return "D Grade";
+            };
+        };
+
+        /*let greatestMark = 0;
+        students.forEach(student => {
+            if (greatestMark >= )
+            
+        });*/
+
+        //mainFrame function (collabing all the functions here)
+        let updatedStudents = students.map((student) => {
+            const total = totalMarks(student);
+            const average = findAverage(total);
+            const result = findResult(student);
+            const grade = findGrade(result, average);
+            return {
+                ...student,
+                total: total,
+                average: average,
+                result: result,
+                grade: grade,
+            };
+        });
+
+
+        const output = document.getElementById("output");
+
+        let updatedTable = updatedStudents.map((student, index) => {
+            return `<tr>
+                    <td>${index + 1}</td>
+                    <td>${student.name}</td>
+                    <td>${student.eng}</td>
+                    <td>${student.math}</td>
+                    <td>${student.science}</td>
+                    <td>${student.total}</td>
+                    <td>${student.average}</td>
+                    <td>${student.result}</td>
+                    <td>${student.grade}</td>
+                    </tr>`;
+        })
+
+        output.innerHTML = `<table>
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>English</th>
+                <th>Maths</th>
+                <th>Science</th>
+                <th>Total</th>
+                <th>Average</th>
+                <th>Result</th>
+                <th>Grade</th>
+                </tr>
+                 ${updatedTable.join(" ")}
+            </table>
+            
+            `;
+
+
+
+    </script>
+</body>
+
+</html>
