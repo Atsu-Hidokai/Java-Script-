@@ -1,0 +1,131 @@
+<html>
+
+<body>
+    <p>Create student markstatement using the array of objects and print the greatest mark for all the subjects with the
+        respective student name's.</p>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 0.3rem, solid, goldenrod;
+            border-collapse: collapse;
+            border-radius: 5px;
+            padding: 10px;
+            font-family: sans-serif;
+            align-content: center;
+        }
+    </style>
+    <div id="output"></div>
+    <p id="tamTop"></p>
+    <p id="engTop"></p>
+    <p id="math"></p>
+
+    <script>
+
+        let students = [
+            { id: 1, name: "sham", tam: 55, eng: 66, math: 89 },
+            { id: 2, name: "ariv", tam: 88, eng: 92, math: 99 },
+            { id: 3, name: "vasa", tam: 55, eng: 31, math: 79 },
+            { id: 4, name: "naga", tam: 35, eng: 48, math: 100 },
+            { id: 5, name: "karthi", tam: 87, eng: 67, math: 88 }
+        ];
+
+        function totalMarks(student) {
+            return (student.tam + student.eng + student.math);
+        };
+
+        function averageMarks(total) {
+            return (total / 3);
+        }
+
+        function findResult(student) {
+            return (student.tam >= 35 && student.eng >= 35 && student.math >= 35 ? "Pass" : "Fail");
+        }
+
+        function findGrade(result, average) {
+            if (result === "Fail") {
+                return "No Grade";
+            } else if (average >= 90) {
+                return "A Grade";
+            } else if (average >= 80) {
+                return "B Grade";
+            } else if (average >= 70) {
+                return "C Grade";
+            } else {
+                return "D Grade";
+            }
+        };
+
+
+        function highestMark(subject, students) { //tofind an topper among the group of students
+            let name = "";
+            let mark = 0;
+            students.forEach((student) => {
+                if (mark < student[subject]) {
+                    mark = student[subject];
+                    name = student.name;
+                }
+            });
+            return { name, mark };
+        };
+
+
+        //-------------need to debug let topper = highestMark("tam", updatedStudents);
+
+
+        //main function --- here we merge all the functions together 
+        let updatedStudents = students.map((student) => {
+            const total = totalMarks(student);
+            const average = averageMarks(total);
+            const result = findResult(student);
+            const grade = findGrade(result, average);
+            return {
+                ...student, //used spread operator
+                total, // when the variable and key names are the same, just put the variable name, js engine will create a keyname for it 
+                average,
+                result,
+                grade,
+            };
+        });
+
+        let updatedTable = updatedStudents.map((student, index) => {
+            return `<tr>
+                <td>${index + 1}</td>
+                <td>${student.name}</td>
+                <td>${student.tam}</td>
+                <td>${student.eng}</td>
+                <td>${student.math}</td>
+                <td>${student.total}</td>
+                <td>${student.average.toFixed(2)}</td>
+                <td>${student.result}</td>
+                <td>${student.grade}</td>
+                </tr>`;
+        });
+
+        const output = document.getElementById("output");
+        output.innerHTML = `<table>
+            <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Tamil</th>
+                <th>English</th>
+                <th>Maths</th>
+                <th>Total</th>
+                <th>Average</th>
+                <th>Result</th>
+                <th>Grade</th>
+                </tr>
+            ${updatedTable.join(" ")}
+       </table>`;
+
+        let topper = highestMark("tam", students);
+        output.innerHTML += `<p>The top mark in Tamil is ${topper.name} - ${topper.mark}</p>`;
+        topper = highestMark("eng", students);
+        output.innerHTML += `<p>The top mark in English is ${topper.name} - ${topper.mark}</p>`;
+        topper = highestMark("math", students);
+        output.innerHTML += `<p>The top mark in Math is ${topper.name} - ${topper.mark}</p>`;
+    </script>
+</body>
+
+</html>
