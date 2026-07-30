@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>Find how many times the ages of the given persons occured repetedly on the array of objects</p>
+</body>
+<script>
+    const persons = [
+        { firstname: "vasa", lastname: "r", age: 22 },
+        { firstname: "kasa", lastname: "p", age: 25 },
+        { firstname: "masa", lastname: "v", age: 29 },
+        { firstname: "dosa", lastname: "l", age: 22 },
+    ];
+
+    const output = persons.reduce((acc, curr) => {
+        if (acc[curr.age]) {
+            acc[curr.age] = ++acc[curr.age];
+        } else {
+            acc[curr.age] = 1;
+        }
+        return acc;
+    },{});
+
+    console.log(output);
+
+</script>
+
+</html>
