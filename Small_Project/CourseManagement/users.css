@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    font-family: "Inter", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-top:50px;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+.container {
+    background-color: white;
+    width: 800px;
+    padding: 20px;
+    border-radius: 8px;
+
+}
+
+.container h3 {
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+}
+
+#frm {
+    width: 50%;
+    margin-top: 15px;
+}
+
+#frm .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+#frm .form-group input,
+#frm .form-group select {
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-top: 3px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+#btn {
+    background-color: green;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+}
+
+#frm .form-check-group {
+    flex-direction: column;
+    margin-bottom: 10px;
+    gap: 5px;
+}
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+
+}
+
+table button {
+    background-color: green;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+}
+
+input[name="gender"]:checked+label {
+    color: green;
+}
