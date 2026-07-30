@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div class="container">
+        <h3>Simple Student Form</h3>
+        <form action="#" id="frm" autocomplete="off">
+
+            <div id="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" />
+            </div>
+            <div id="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" />
+            </div>
+            <div id="form-check-group">
+                <label>Select Gender</label>
+                <input type="radio" id="male" value="male" name="gender"><label for="male">Male</label>
+                <input type="radio" id="female" value="female" name="gender"><label for="female">Female</label>
+            </div>
+            <div id="form-group">
+                <label id="course">Select Course</label>
+                <select id="course">
+                    <option value="C">C</option>
+                    <option value="C++">C++</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                    <option value="Java Script">Java Script</option>
+                </select>
+            </div>
+            <button id="btn">Save</button>
+        </form>
+    </div>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+        * {
+            font-family: "Inter", serif;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: aliceblue;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+            justify-content: center;
+        }
+
+        .container {
+            width: 800px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .container h3 {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        #frm {
+            width: 50%;
+            padding: 20px;
+
+        }
+
+        #form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px
+        }
+
+        #form-check-group {
+            gap: 10px;
+            padding: 7px 0px;
+            display: flex;
+        }
+
+        #frm input,
+        #frm select {
+            border: 1px solid #ccc;
+            outline: none;
+            padding: 7px;
+            border-radius: 5px;
+            margin-top: 4px;
+        }
+
+        #btn {
+            padding: 12px 20px;
+            background-color: green;
+            color: #fff;
+            border-radius: 5px;
+            margin-top: 5px;
+            border: none;
+            outline: none;
+        }
+
+        input[name="gender"]:checked+label {
+            color: green;
+        }
+    </style>
+</body>
+
+</html>
